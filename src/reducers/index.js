@@ -1,12 +1,14 @@
-const initialstate = {}
+const initialstate = {
+  countries:[]
+}
 
 export default function rootReducer(state = initialstate, action) {
     switch (action.type) {
         
-      case 'GET_PRODUCTS':
+      case 'GET_COUNTRIES':
         return {
           ...state,
-          products: action.payload,
+          countries: action.payload,
         }
 
       default:

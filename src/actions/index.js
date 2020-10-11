@@ -1,13 +1,11 @@
-export function getProducts() {
+export function getCountries() {
     return function (dispatch) {
-      return fetch('http://localhost:3002/products', {
-        credentials: 'include',
-      })
+      return fetch('https://restcountries.eu/rest/v2/all')
         .then((res) => res.json())
-        .then((products) =>
+        .then((countries) =>
           dispatch({
-            type: 'GET_PRODUCTS',
-            payload: products,
+            type: 'GET_COUNTRIES',
+            payload: countries,
           })
         )
         .catch((error) => console.log(error))
