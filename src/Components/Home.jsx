@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { connect } from 'react-redux'
 import { getCountries } from './../actions/index'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 
@@ -9,6 +8,15 @@ const tarjeta = {
     width: '18rem',
     margin: '15px',
     padding: '10px'
+}
+
+const textoNoPaises = {
+    marginTop: '50px',
+    textAlign: 'center',
+    fontSize: '40px',
+    height: '200px',
+    alignItems: 'center',
+    display:'flex'
 }
 
 
@@ -24,20 +32,24 @@ function Home({getCountries}) {
     }, [])
 
    const paisesFiltrados = countries && countries.filter( country => {
-       return country.name.toLowerCase().includes(search.toLowerCase())
+       return country.name.toLowerCase().includes(search.toLowerCase()) || 
+       country.capital.toLowerCase().includes(search.toLowerCase()) || 
+       country.region.toLowerCase().includes(search.toLowerCase())
    })
 
     return (
         <div>
             <div class="collapse navbar-collapse" style={{display:'flex', justifyContent:'space-around', marginTop:'10px'}} id="navbarSupportedContent">
                 <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Buscar país" aria-label="Search" onChange={(e) => setSearch(e.target.value)}/>
+                    <input class="form-control mr-sm-2" type="search" placeholder="Buscar país o capital" aria-label="Search" onChange={(e) => setSearch(e.target.value)}/>
                 </form>
             </div>
             <div className='row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 justify-content-center'>
-                {paisesFiltrados && paisesFiltrados.map(c => (
+                {paisesFiltrados && paisesFiltrados.length === 0 ? 
+                    <p style={textoNoPaises}><strong>Ningún país coincide con su búsqueda </strong></p> 
+                : paisesFiltrados && paisesFiltrados.map(c => (
                 <div class="card shadow p-3 mb-5 bg-white rounded" style={tarjeta}>
-                    <img src={c.flag} class="card-img-top" style={{height:'173px', width:'266'}} alt="..." />
+                    <img loading="lazy" src={c.flag} class="card-img-top" style={{height:'173px', width:'266'}} alt="..." />
                     <div class="card-body">
                         <h5 class="card-title">{c.name}</h5>
                     </div>
