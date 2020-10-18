@@ -7,7 +7,8 @@
 Hi, thanks for watch my project!  
 My name is Ezequiel, i'm from Córdoba, Argentina. I'm a full stack web developer [REACT, REDUX, NODEJS, POSTGRESQL]  
 - This project is a challenge from https://www.frontendmentor.io/
-- The project was done with React, React Router, Hooks, Redux consuming a REST API (https://restcountries.eu/)
+- The project was done with React, React Router, Hooks, Redux consuming a REST API (https://restcountries.eu/)  
+- Try it on https://countries-flags.vercel.app/
 
 _____________________________________________
 
