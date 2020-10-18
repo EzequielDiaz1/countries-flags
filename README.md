@@ -9,7 +9,7 @@ My name is Ezequiel, i'm from Córdoba, Argentina. I'm a full stack web develope
 - This project is a challenge from https://www.frontendmentor.io/
 - The project was done with React, React Router, Hooks, Redux consuming a REST API (https://restcountries.eu/)
 
-##______________________________
+_____________________________________________
 
 
 - This is the home of the desktop site  
