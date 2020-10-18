@@ -1,0 +1,43 @@
+@media only screen and (max-width: 600px) {
+    .buscador{
+        flex-direction: column;
+        align-items: center;
+    }
+    .navbar{
+        display:flex;
+        justify-content: center;
+    }
+
+    .tarjeta{
+        width: 75%;
+        margin: 15px;
+        padding: 10px;
+    }
+
+    .home{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .shadow{
+        justify-content: center;
+        width: 400px !important;
+    }
+
+    .fotito{
+        width: 350px !important;
+        height: 200px !important
+    }
+
+    .dropdown{
+        display:flex;
+        flex-direction: column;
+    }
+
+    .paisDetalle{
+        flex-direction: column;
+        width: auto;
+    }
+  }
+
