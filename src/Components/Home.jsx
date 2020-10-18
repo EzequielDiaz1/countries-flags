@@ -49,7 +49,7 @@ function Home({getCountries, getCountriesByRegion, paises, paisesContinente}) {
         <div className='home'>
             <div class="collapse navbar-collapse" className='buscador' style={{display:'flex', justifyContent:'center', marginTop:'10px'}} id="navbarSupportedContent">
                 <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2 shadow" style={{width:'400px'}} type="search" placeholder="Buscar país o capital" aria-label="Search" onChange={(e) => setSearch(e.target.value)}/>
+                    <input class="form-control mr-sm-2 shadow texto" style={{width:'400px'}} type="search" placeholder="Buscar país o capital" aria-label="Search" onChange={(e) => setSearch(e.target.value)}/>
                 </form>
                 <div class="dropdown">
                     <button class="btn btn-outline-secondary dropdown-toggle shadow" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -73,7 +73,7 @@ function Home({getCountries, getCountriesByRegion, paises, paisesContinente}) {
                             setFiltro(true)}}>Africa</a>
                     </div>
                     {filtro ?
-                        <button class="ml-2 btn btn-outline-danger border-0 btn-sm" onClick={() => {
+                        <button class="ml-2 btn btn-outline text-danger border-0 btn-sm" onClick={() => {
                             getCountries()
                             setFiltro(false)}}>Quitar filtros</button>
                         : null
@@ -92,7 +92,7 @@ function Home({getCountries, getCountriesByRegion, paises, paisesContinente}) {
                     <div class="card shadow col mb-4 p-3 mb-5 bg-white rounded" style={tarjeta}>
                         <img loading="lazy" onClick={() => history.push(`/detail/${c.name.toLowerCase()}`)} src={c.flag} class="card-img-top" style={{height:'173px', width:'266', cursor: 'pointer'}} alt="..." />
                         <div class="card-body">
-                            <h5 class="card-title" style={{cursor: 'pointer'}} onClick={() => history.push(`/detail/${c.name.toLowerCase()}`)}>{c.name}</h5>
+                            <h5 class="card-title display-5" style={{cursor: 'pointer'}} onClick={() => history.push(`/detail/${c.name.toLowerCase()}`)}><strong>{c.name}</strong></h5>
                         </div>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Capital: {c.capital}</li>
